@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+
+	"name": "open-all-links",
+	"description": "Open all links in new tabs",
+	"version": "1.0",
+
+	"browser_action": {
+		"default_icon": "icon16.png"
+	},
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"https://ajax.googleapis.com/"
+	],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": [
+				"js/lib/jquery-3.2.1.js"
+			]
+		}
+	],
+	"background": {
+		"scripts": ["background.js"]
+	}
+}
